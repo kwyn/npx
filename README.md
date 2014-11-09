@@ -50,6 +50,7 @@ Promise interface for chaining animation.
 Fix add animation listener memory leak. 
 
 Proposed Object Oriented Interface:
+```
 var npx = new neopixel (numberOfPixels, brightness)
 npx.setBrightness(value) // between 0-1
 npx.off()
@@ -60,8 +61,9 @@ npx.clearAnimations();
 npx.setAnimationSequence(sequenceArray or stringName);
 npx.runAnimation(stringName);
 npx.queueAnimation()
-
+```
 Proposed Chained Interface:
+```
 npx
     .registerAnimation('name', sequenceArray)
     .setAll(color, time) 
@@ -69,4 +71,4 @@ npx
     .setAll(color, time)
     .animate(sequenceArray or name)
     .off()
-
+```
