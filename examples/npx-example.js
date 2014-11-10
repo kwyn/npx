@@ -1,9 +1,9 @@
 var Npx = require('../'); // Replace '../' with 'npx' in your code
 
-var npx = new Npx(70,1);
+var npx = new Npx(60,1);
 
 // npx.setAll([0x00,0x11,0x11])()
-//   .then( npx.clear() )
+//   // .then( npx.clear() )
 //   .then(function(){ console.log('did the thing') });
 var white = [0xFF, 0xFF, 0xFF];
 var off = [0x00,0x00,0x00];
@@ -15,9 +15,16 @@ var blue = [0x00, 0x00, 0x11];
 var violet = [0x00, 0x11, 0x11];
 var colors = [red, orange, yellow, green, blue, violet];
 
-for (var i = 0; i < colors.length; i++) {
-  npx.enqueue(npx.setAll(colors[i], 1000))
-}
-npx.enqueue(npx.clear());
-npx.run()
-  .then(function(){console.log('done')});
+
+// npx.loop(npx.setAll(white));
+// setTimeout(function(){
+//   npx.stop();
+// }, 1000);
+
+npx.walk(colors).then(console.log('done'));
+
+// for (var i = 0; i < npx.totalPixels; i++) {
+//   npx.enqueue(npx.setPixel(i, violet) )
+// }
+// npx.run()
+//   .then(function(){console.log('done')});
