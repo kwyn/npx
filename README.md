@@ -14,15 +14,14 @@ Then connect the circuit. You'll need a separate power source because these LEDs
 
 # Current Methods:
 ```JavaScript
-Npx() // constructor object. 
-.enqueue(animation) // enqueue an animation object.
-.run() // Runs queued animations
-.setAll(color, delay)
-.clear(delay) // Alias for setAll([0x00,0x00,0x00], delay)
+var npx = new Npx(totalPixels) // Number of pixels on your neopixel strip
+var animation = npx.newAnimation(numberOfFrames) // return a new animation 
+npx.enqueue(animation, delay) // enqueue an animation object and delay between it and the next option.
+npx.run() // Runs queued animations
+npx.play(animation) // Immediately plays animation. 
 ```
 
 TODO:
- - Animation Library with:
-    - create pattern (colorArray, brightness)
-    - create pulse (color, brightness)
-    - Set interval abstraction for animation frequency. (limited by 800hz but that's stupid fast anyways)
+ - Implement on Animation:
+    - pattern (colorArray, brightness)
+    - pulse (color, brightness)

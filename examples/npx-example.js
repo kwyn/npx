@@ -38,14 +38,13 @@ var walk = function (colorArray){
   return animation;
 }
 
-var walkAnimation = walk(colors);
-for (var i = 0; i < 10; i++) {
-  npx.enqueue(walkAnimation, 1000);
-}
+// var walkAnimation = walk(colors);
+// for (var i = 0; i < 10; i++) {
+//   npx.enqueue(walkAnimation, 1000);
+// }
 
 var animation = new npx.newAnimation(60,1);
-animation.setAll("#111111")
-console.log(animation);
+animation.setAll("#0F0600")
 npx.play(animation)
 // npx.run()
 //   .then(function(){console.log('done')});
