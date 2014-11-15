@@ -1,10 +1,18 @@
+var expect = require('chai').expect;
+// Remember to comment out hw and promisify Animation in npx.js
+function promisifyAnimation(buffer, delay){
+    var animation = Q.Promise(function(resolve, reject, notify){
+      // Fake delay
+      setTimeout(function(){
+        resolve(buffer, delay);
+      }, delay);
+      // Normally we'd send the animation to the hardware here
+    });
+    return animation;
+}
+
 // Load npx library
 var Npx = require('../');
-//Todo: Refactor to tinytap
-var mocha = require('mocha');
-var expect = require('chai').expect;
-var assert = require('chai').assert;
-
 
 var npx = new Npx(60,1);
 
@@ -16,12 +24,12 @@ var orange = [0x11, 0x33, 0x00];
 var yellow = [0x11, 0x11, 0x00];
 var green = [0x11, 0x00, 0x00];
 var blue = [0x00, 0x00, 0x11];
-var violet = [0x00, 0x11, 0x11];
+var violet = [0x00, 0x55, 0x55];
 
 describe('Npx', function(){
   it('should be new-able', function(){
     var npx = new Npx();
-    expect(typeof npx).to.be.equal('object');
+    expect(npx).to.equal(npx);
   });
   it('should default to npx.totalPixels to 1', function(){
     var npx = new Npx();
@@ -37,20 +45,6 @@ describe('.setAll', function(){
     var setAllWhite = npx.setAll(white);
     expect(setAllWhite.isPending()).to.be.equal(true);
   });
-})
+});
 
-// npx.setAll([0x00,0x11,0x11])()
-//   .then( npx.clear() )
-//   .then(function(){ console.log('did the thing') });
-
-
-
-// var colors = [red, orange, yellow, green, blue, violet];
-
-// for (var i = 0; i < colors.length; i++) {
-//   npx.enqueue(npx.setAll(colors[i], 1000))
-// }
-
-// npx.run()
-//   .then(function(){console.log('done')});
 
