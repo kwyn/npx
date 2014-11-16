@@ -46,9 +46,22 @@ var walk = function (colorArray){
 //   npx.stop();
 // },5000)
 
-var animation = npx.newAnimation(1,1);
-animation.setPattern(colors);
-npx.play(animation);
+_.forEach(colors, function(color, index, colors){
+  var animation = npx.newAnimation(1,1);
+  var pattern = colors.slice(index).concat(colors.slice(0, index));
+  console.log(colors, pattern)
+  animation.setPattern(pattern);
+  npx.enqueue(animation, 1000);
+},this);
+
+npx.run();
+
+// var animation = npx.newAnimation(1,1);
+// animation.setPattern(colors);
+// for (var i = 0; i < 10; i++) {
+//   npx.enqueue(walkAnimation, 1000);
+// }
+// npx.play(animation);
 
 
 // var animation = new npx.newAnimation(60,1);
