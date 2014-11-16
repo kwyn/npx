@@ -6,7 +6,7 @@ var npx = new Npx(60,1);
 //   .then(function(){ console.log('did the thing') });
 var white = [0xFF,0xFF,0xFF];
 var off = '#000000';
-var red = [0x22,0x00,0x00];
+var red = [0xFF,0x00,0x00];
 var orange = [0x33, 0x11, 0x00];
 var yellow = [0x11, 0x11, 0x00];
 var green = [0x00, 0x11,  0x00];
@@ -27,7 +27,7 @@ var walk = function (colorArray){
   _.each( _.range(animation.length), function(frame){
     _.each(colorArray, function(color, colorIndex){
       var pixelIndex = frame + colorIndex;
-      if(frame + colorIndex <= animation.framelength ){
+      if(frame + colorIndex >= animation.framelength){
         pixelIndex = pixelIndex - animation.framelength;
       }
       animation.setPixel(pixelIndex, color, frame);
