@@ -4,7 +4,7 @@
 var Npx = require('../'); // Replace '../' with 'npx';
 
 // Initialize npx object with number of neopixels
-var npx = new Npx(60);
+var npx = new Npx(60); // replace '60' with the number of neopixels connect to tessel
 
 // Create colored animations
 var animationRed = npx.newAnimation(1).setAll('#FF0000');
