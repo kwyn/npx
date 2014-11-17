@@ -45,7 +45,7 @@ var yourFavoriteHexColor = '#FF00FF';
 
 yourFirstanimation.setAll(yourFavoriteHexColor);
 
-npx.play()
+npx.play(yourFirstAnimation);
 ```
 
 Great! You're on your way now. Get making awesome hardware hacks and post it to the [projects page](https://projects.tessel.io/projects) when you're done!
@@ -68,10 +68,10 @@ var animation = npx.newAnimation(numberOfFrames);
 ```
 ###npx.play(animation)
 
-Immediately play animation.
+Immediately plays animation.
 ```
 
-npx.play(animation) // Immediately plays animation.
+npx.play(animation)
 ```
 
 ###npx.enqueue(animation, delay)
@@ -90,8 +90,17 @@ npx.enqueue(animation, 1000);
 Plays all animations in queue in order from first queued to last queued.
 
 ```JavaScript
-var animationRed = npx.newAnimation(1)
-var animationBlue = npx.newAnimation(1)
+var animationRed = npx.newAnimation(1).setAll('#FF0000');
+var animationWhite = npx.newAnimation(1).setAll('#FFFFFF');
+var animationBlue = npx.newAnimation(1).setAll('#0000FF');
+
+npx.enqueue(animationRed,1000)
+   .enqueue(animationWhite,1000)
+   .enqueue(animationBlue,1000)
+   .run();
+```
+
+note how the neopixels stay blue. This is because neopixels hold their state until they loose power. If you want to turn them off, send a new blank animation to the strip.
 
 ##Animation objects
 Colors for animations can be of the form [R,G,B] where R,G, and B are values between 0 and 255 (or hex 0x00, 0xFF).
