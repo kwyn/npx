@@ -1,6 +1,6 @@
 {
   "name": "npx",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Neopixel API for Tessel",
   "main": "index.js",
   "repository": {
