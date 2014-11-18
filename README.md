@@ -1,4 +1,4 @@
-#Npx: A friendlier abstraction for the [Tessel Neopixel Libarary](https://github.com/tessel/neopixels)
+#Npx: A friendlier abstraction for the [Tessel Neopixel Library](https://github.com/tessel/neopixels)
 
 ##Neopixels (From original library)
 
@@ -100,7 +100,7 @@ npx.enqueue(animationRed,1000)
    .run();
 ```
 
-note how the neopixels stay blue. This is because neopixels hold their state until they loose power. If you want to turn them off, send a new blank animation to the strip.
+note how the neopixels stay blue. This is because neopixels hold their state until they lose power. If you want to turn them off, send a new blank animation to the strip.
 
 ##Animation objects
 Colors for animations can be of the form [R,G,B] where R,G, and B are values between 0 and 255 (or hex 0x00, 0xFF).
@@ -122,7 +122,7 @@ Sets all pixels in one frame to a color. If no frame is specified it will set it
 Sets single pixel to a color in a specific animation frame. If no frame is specified it will set it for all frames.
 
 ####setPattern(arrayOfColors, frame)
-Sets all pixels in one frame to a color.I f no frame is specified it will set it for all frames.
+Sets all pixels in one frame to a color. If no frame is specified it will set it for all frames.
 
 ##TODO:
  - Implement on Animation:
