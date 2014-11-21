@@ -43,7 +43,7 @@ Create your first single frame animation and set it to a color!
 var yourFirstAnimation = npx.newAnimation(1) // initialized with number of animation frames
 var yourFavoriteHexColor = '#FF00FF';
 
-yourFirstanimation.setAll(yourFavoriteHexColor);
+yourFirstAnimation.setAll(yourFavoriteHexColor);
 
 npx.play(yourFirstAnimation);
 ```
