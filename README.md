@@ -8,7 +8,7 @@ This library is rather sparse at the moment and most of the functionality lies w
 
 ##Installation (From original library)
 
-Make sure you have firmware build `0.1.16` or later (```tessel board --version```) installed on Tessel.
+Make sure you have firmware build `0.1.16` or later (```tessel version --board```) installed on Tessel.
 
 Then connect the circuit. You'll need a separate power source because these LEDs require **a lot** of juice. Check out [Adafruit's Powering Guide](https://learn.adafruit.com/adafruit-neopixel-uberguide/power) for the best advice. Best practice is to power the neopixels with the 3.7V fixture on the GPIO bank when using Tessel (since it is a 3.3V MCU) but 5V has worked fine in practice. Connect the data wire to G4 on Tessel's GPIO bank and connect GND on Tessel to both GND wires from the neopixels.
 
