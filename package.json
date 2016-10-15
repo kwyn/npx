@@ -23,8 +23,7 @@
   },
   "homepage": "https://github.com/HarleyKwyn/npx",
   "dependencies": {
-    "kew": "^0.5.0-alpha.1",
-    "lodash": "^2.4.1"
+    "kew": "^0.5.0-alpha.1"
   },
   "devDependencies": {
     "chai": "^1.10.0",
